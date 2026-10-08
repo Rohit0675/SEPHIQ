@@ -1,0 +1,116 @@
+{
+  "Nexora": {
+    "type": "internal",
+    "positioning": "All-in-one digital workspace spanning design, docs, collaboration, AI and project management.",
+    "capabilities": [
+      "Real-time co-editing",
+      "Templates library",
+      "AI content generation",
+      "Project management",
+      "Unified workspace",
+      "Voice-to-design generation",
+      "Offline-first sync engine",
+      "Cross-team sentiment dashboard",
+      "Regulatory compliance templates",
+      "Creator micro-licensing marketplace"
+    ],
+    "strategic_strengths": [
+      "Cross-functional workspace consolidation",
+      "Five explicitly differentiated capabilities in the internal benchmark",
+      "Internal customer feedback and pricing evidence available"
+    ],
+    "source_urls": [
+      "internal://nexora/product-specification",
+      "internal://nexora/pricing-specification",
+      "internal://nexora/customer-feedback"
+    ]
+  },
+  "Figma": {
+    "type": "external",
+    "positioning": "Collaborative product-design and development platform with design, prototyping, AI, code and creative workflow products.",
+    "capabilities": [
+      "Collaborative canvas",
+      "Multiplayer editing",
+      "Design systems",
+      "Prototyping",
+      "Dev Mode",
+      "Figma Make",
+      "Figma agent",
+      "Figma Weave",
+      "Figma Motion",
+      "FigJam",
+      "Figma Slides",
+      "Integrations and MCP"
+    ],
+    "strategic_strengths": [
+      "Deep product-design workflow",
+      "Strong design-to-development connection",
+      "Rapid expansion of AI agents and creative workflows"
+    ],
+    "source_urls": [
+      "https://www.figma.com/",
+      "https://www.figma.com/design/",
+      "https://www.figma.com/release-notes/"
+    ]
+  },
+  "Canva": {
+    "type": "external",
+    "positioning": "Visual communication and productivity platform combining design, documents, presentations, sheets, websites, video, brand management and AI.",
+    "capabilities": [
+      "Visual Suite",
+      "Templates",
+      "Brand Kit",
+      "Real-time collaboration",
+      "Docs",
+      "Sheets",
+      "Whiteboards",
+      "Presentations",
+      "Websites",
+      "Video",
+      "Canva AI 2.0",
+      "Magic Layers",
+      "Canva Code",
+      "Offline mode",
+      "ProSuite"
+    ],
+    "strategic_strengths": [
+      "Broad visual communication workflow",
+      "Strong template and brand ecosystem",
+      "Rapid expansion of AI into end-to-end creation and productivity"
+    ],
+    "source_urls": [
+      "https://www.canva.com/",
+      "https://www.canva.com/en_in/visual-suite/",
+      "https://www.canva.com/canva-ai/",
+      "https://www.canva.com/newsroom/news/"
+    ]
+  },
+  "Notion": {
+    "type": "external",
+    "positioning": "Knowledge and workflow workspace built around docs, databases, collaboration, search and increasingly agentic automation.",
+    "capabilities": [
+      "Docs",
+      "Databases",
+      "Real-time collaboration",
+      "AI Meeting Notes",
+      "AI Search",
+      "Notion Agent",
+      "Custom Agents",
+      "Agent skills",
+      "Workers",
+      "MCP connections",
+      "Calendar tools",
+      "Model controls",
+      "External agents"
+    ],
+    "strategic_strengths": [
+      "Deep knowledge/workflow context",
+      "Strong agentic automation direction",
+      "Extensible developer and integration layer"
+    ],
+    "source_urls": [
+      "https://www.notion.com/product/features",
+      "https://www.notion.com/releases"
+    ]
+  }
+}

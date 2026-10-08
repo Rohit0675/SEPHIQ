@@ -1,0 +1,192 @@
+[
+  {
+    "id": "SIG-FIG-007",
+    "product": "Figma",
+    "title": "The Figma agent is generally available",
+    "date": "2026-10-06",
+    "source": "https://www.figma.com/release-notes/",
+    "description": "Figma's agent exited beta with improved latency, cross-platform file search, configurable design-library guidelines, live teammate-agent visibility and custom skills.",
+    "category": "AI",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-FIG-006",
+    "product": "Figma",
+    "title": "Connect multiple GitHub organizations to Figma",
+    "date": "2026-10-05",
+    "source": "https://www.figma.com/release-notes/",
+    "description": "Organization and Enterprise plans can connect multiple GitHub organizations to a single Figma plan, supporting code workflows across teams and projects.",
+    "category": "Integrations",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-FIG-005",
+    "product": "Figma",
+    "title": "Motion adds reusable styles, audio and Lottie export",
+    "date": "2026-09-30",
+    "source": "https://www.figma.com/release-notes/",
+    "description": "Figma Motion added reusable custom animation styles, audio on timelines, character-level text animation and Lottie/dotLottie export.",
+    "category": "Design",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-FIG-004",
+    "product": "Figma",
+    "title": "Post riffs to Figma Community",
+    "date": "2026-09-30",
+    "source": "https://www.figma.com/release-notes/",
+    "description": "Community riffs let users share ideas, animations, prototypes and experiments with the Figma Community and their profiles.",
+    "category": "Design",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-FIG-003",
+    "product": "Figma",
+    "title": "Smoother design collaboration and navigation on mobile",
+    "date": "2026-09-30",
+    "source": "https://www.figma.com/release-notes/",
+    "description": "Figma's mobile app improved page switching, frame previews, exact-page sharing, individual frame exports and resume-where-you-left-off navigation.",
+    "category": "Collaboration",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-FIG-008",
+    "product": "Figma",
+    "title": "Vertical wrap arrives in Auto Layout",
+    "date": "2026-09-25",
+    "source": "https://www.figma.com/release-notes/",
+    "description": "Vertical Auto Layout can wrap overflow content into new columns, bringing responsive multi-column behavior closer to CSS flexbox.",
+    "category": "Design",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-CAN-004",
+    "product": "Canva",
+    "title": "AI Vision London focuses on human distinctiveness",
+    "date": "2026-09-18",
+    "source": "https://www.canva.com/newsroom/news/ai-vision-uk-2026-distinctiveness-brand/",
+    "description": "Canva's AI Vision London programming emphasized workflow-first AI adoption, human judgment and distinctiveness as AI accelerates content production.",
+    "category": "AI",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-FIG-002",
+    "product": "Figma",
+    "title": "Create on-brand content with Figma designs in Weave",
+    "date": "2026-09-17",
+    "source": "https://www.figma.com/release-notes/",
+    "description": "Figma Weave can connect Figma frames into workflows, preserve selected design attributes, create asset variations and sync connected assets with source designs.",
+    "category": "AI",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-CAN-007",
+    "product": "Canva",
+    "title": "Craft, upgraded: Canva ProSuite",
+    "date": "2026-09-16",
+    "source": "https://www.canva.com/newsroom/news/canva-prosuite-launch/",
+    "description": "Canva connected Affinity, Cavalry, Flourish and Leonardo into a broader professional creative suite, expanding its professional craft proposition.",
+    "category": "Design",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-NOT-007",
+    "product": "Notion",
+    "title": "Notion 3.7: Agent skills for your whole team",
+    "date": "2026-09-15",
+    "source": "https://www.notion.com/releases",
+    "description": "Notion introduced reusable AI skills, a shared skills library, automatic skill execution and executive-ready skill workflows.",
+    "category": "AI",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-CAN-005",
+    "product": "Canva",
+    "title": "Canva World Tour adds AI Essentials certification",
+    "date": "2026-09-15",
+    "source": "https://www.canva.com/newsroom/news/canva-world-tour-2026/",
+    "description": "Canva expanded free mobile-first learning and introduced an AI Essentials certification as part of its broader AI adoption push.",
+    "category": "AI",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-NOT-006",
+    "product": "Notion",
+    "title": "Control which AI models your agents can use",
+    "date": "2026-09-09",
+    "source": "https://www.notion.com/releases",
+    "description": "Business and Enterprise workspace owners can control which AI models are available to Notion Agent and Custom Agents and choose defaults.",
+    "category": "AI",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-CAN-006",
+    "product": "Canva",
+    "title": "100 upgrades across the Visual Suite",
+    "date": "2026-09-02",
+    "source": "https://www.canva.com/newsroom/news/visual-suite-100-updates/",
+    "description": "Canva highlighted more than 100 upgrades across Docs, Sheets, Whiteboards, Presentations, Websites and other formats, reinforcing its connected productivity-and-creativity suite.",
+    "category": "Collaboration",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-NOT-005",
+    "product": "Notion",
+    "title": "Agents can suggest edits",
+    "date": "2026-08-28",
+    "source": "https://www.notion.com/releases",
+    "description": "Notion Agents can propose changes for review instead of applying them directly, supporting controlled line-level editing workflows.",
+    "category": "AI",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-CAN-008",
+    "product": "Canva",
+    "title": "One million nonprofits now have Canva Pro for free",
+    "date": "2026-08-24",
+    "source": "https://www.canva.com/newsroom/news/",
+    "description": "Canva announced that one million nonprofits could access Canva Pro for free, extending its ecosystem and adoption strategy among mission-driven organizations.",
+    "category": "Go-to-market",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-NOT-004",
+    "product": "Notion",
+    "title": "Developer Portal moves into the sidebar",
+    "date": "2026-08-19",
+    "source": "https://www.notion.com/releases",
+    "description": "Notion added a Developer section for Workers, connections, personal access tokens and execution logs, making the developer surface more accessible.",
+    "category": "Integrations",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-NOT-003",
+    "product": "Notion",
+    "title": "AI Meeting Notes can trigger Custom Agents",
+    "date": "2026-07-31",
+    "source": "https://www.notion.com/releases",
+    "description": "Custom Agents can run automatically after AI Meeting Notes finish, turning meeting summaries into status updates, action items or tickets.",
+    "category": "Automation",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-NOT-002",
+    "product": "Notion",
+    "title": "New calendar tools for your agent",
+    "date": "2026-07-16",
+    "source": "https://www.notion.com/releases",
+    "description": "Notion Agents gained calendar tools for viewing schedules, moving meetings, sending invites and finding suitable meeting times.",
+    "category": "Automation",
+    "detected_at": "2026-10-08 09:00:00"
+  },
+  {
+    "id": "SIG-NOT-008",
+    "product": "Notion",
+    "title": "External agents and Microsoft file support",
+    "date": "2026-07-01",
+    "source": "https://www.notion.com/releases/2026-07-01",
+    "description": "Notion expanded its agent platform with external agents, support for reading and creating Microsoft file types, and additional MCP connections.",
+    "category": "Integrations",
+    "detected_at": "2026-10-08 09:00:00"
+  }
+]
