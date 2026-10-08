@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   LayoutDashboard,
   GitCompareArrows,
@@ -29,6 +29,24 @@ export default function App() {
   const { user, ready, firebaseEnabled, logout } = useAuth();
   const [page, setPage] = useState("dashboard");
   const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(() => {
+    const openAnalyst = (event) => {
+      const question = event.detail?.question;
+
+      if (question) {
+        localStorage.setItem("sephiq_pending_analysis_question", question);
+      }
+
+      setPage("analyst");
+    };
+
+    window.addEventListener("sephiq:open-analyst", openAnalyst);
+
+    return () => {
+      window.removeEventListener("sephiq:open-analyst", openAnalyst);
+    };
+  }, []);
   if (!ready) return <div className="boot">Loading SEPHIQ…</div>;
   if (!user) return <Login />;
 

@@ -81,9 +81,185 @@ def relevant_signals(company, signals, intent):
     if intent=="collaboration": return [s for s in signals if s.get("category")=="Collaboration"]
     if intent=="recent": return signals[:5]
     return signals
+def make_article_answer(req, evidence, intent):
+    article = req.article_context
 
+    if not article:
+        return None
+
+    title = article.title
+    summary = article.summary or "No article summary was provided."
+    publisher = article.publisher or "External publisher"
+    company = article.company or "AI Industry"
+    date = article.date or "undated"
+
+    # ---------------------------------------------------------
+    # Identify the competitor involved in the article.
+    # ---------------------------------------------------------
+
+    competitor = company
+
+    if competitor not in req.companies:
+        competitor_lower = competitor.lower()
+
+        for c in req.companies:
+            if c.lower() in competitor_lower:
+                competitor = c
+                break
+
+    # ---------------------------------------------------------
+    # Article-specific strategic interpretation.
+    # ---------------------------------------------------------
+
+    implications = []
+
+    if competitor == "Figma":
+        implications.append(
+            "The development increases pressure on Nexora to "
+            "integrate AI directly into design and product "
+            "workflows rather than treating AI as a standalone "
+            "content-generation feature."
+        )
+
+        implications.append(
+            "Figma's movement is particularly relevant to "
+            "Nexora's voice-to-design and collaboration "
+            "differentiators because the competitive boundary "
+            "is shifting from design software toward "
+            "AI-assisted workflow execution."
+        )
+
+    elif competitor == "Canva":
+        implications.append(
+            "The development strengthens Canva's position "
+            "around broad visual creation and lowers the "
+            "friction between ideation, generation and "
+            "content production."
+        )
+
+        implications.append(
+            "For Nexora, the implication is to avoid competing "
+            "only on template or generation breadth and instead "
+            "connect AI creation with its differentiated "
+            "cross-team workflow capabilities."
+        )
+
+    elif competitor == "Notion":
+        implications.append(
+            "The development reinforces Notion's shift from a "
+            "documentation workspace toward an agentic "
+            "knowledge and workflow platform."
+        )
+
+        implications.append(
+            "For Nexora, this increases the strategic importance "
+            "of connecting its AI capabilities with project "
+            "execution, collaboration and organizational context."
+        )
+
+    elif competitor == "Google":
+        implications.append(
+            "The development indicates that AI agents are "
+            "increasingly being embedded directly into "
+            "mainstream productivity applications rather "
+            "than operating as separate chat interfaces."
+        )
+
+        implications.append(
+            "For Nexora, the competitive risk is that large "
+            "platform ecosystems can distribute agentic "
+            "capabilities across existing enterprise workflows."
+        )
+
+    elif competitor == "Microsoft":
+        implications.append(
+            "The development reinforces the convergence of "
+            "AI assistants, enterprise applications and "
+            "workflow automation."
+        )
+
+        implications.append(
+            "Nexora should therefore prioritize interoperability "
+            "and workflow integration rather than building an "
+            "isolated AI assistant."
+        )
+
+    elif competitor == "OpenAI":
+        implications.append(
+            "The development suggests that the competitive "
+            "frontier is moving toward systems capable of "
+            "executing multi-step work rather than simply "
+            "generating content."
+        )
+
+        implications.append(
+            "For Nexora, this increases the value of its "
+            "workflow, project-management and cross-functional "
+            "context as potential foundations for agentic execution."
+        )
+
+    else:
+        implications.append(
+            f"The development from {competitor} is relevant "
+            "because it indicates continued movement toward "
+            "AI embedded inside existing application workflows."
+        )
+
+        implications.append(
+            "For Nexora, the strategic response should focus "
+            "on whether this capability threatens a current "
+            "differentiator, changes customer expectations, "
+            "or creates an integration opportunity."
+        )
+
+    # ---------------------------------------------------------
+    # Extract the relevant monitored signal history.
+    # ---------------------------------------------------------
+
+    competitor_signals = []
+
+    if competitor in evidence:
+        competitor_signals = evidence[competitor].get(
+            "signals",
+            [],
+        )
+
+    recent_signal_text = ""
+
+    if competitor_signals:
+        recent_signal_text = (
+            f" SEPHIQ's monitored history also contains "
+            f"{len(competitor_signals)} signal(s) for "
+            f"{competitor} in the selected evidence window."
+        )
+
+    # ---------------------------------------------------------
+    # Build the article-specific answer.
+    # ---------------------------------------------------------
+
+    return (
+        f"This analysis is anchored to the selected development: "
+        f"'{title}' published by {publisher} on {date}. "
+        f"The article concerns {competitor}. "
+        f"{summary} "
+        f"{' '.join(implications)}"
+        f"{recent_signal_text} "
+        f"The key strategic question for Nexora is whether this "
+        f"development should trigger a product response, an "
+        f"acceleration of an existing capability, or simply "
+        f"continued monitoring."
+    )
 
 def make_direct_answer(req,evidence,intent):
+    article_answer = make_article_answer(
+        req,
+        evidence,
+        intent,
+    )
+
+    if article_answer:
+        return article_answer
+    
     companies=req.companies
     names=", ".join(companies)
     sigs={c:relevant_signals(c,evidence[c]["signals"],intent) for c in companies if c!=NEXORA}
@@ -113,6 +289,36 @@ def deterministic_analysis(req):
     evidence=build_evidence(req.companies,req.date_from,req.date_to,req.category)
     intent=detect_intent(req.question)
     findings=[]; sources=[]; themes=[]; differences=[]; limitations=[]; recommendations=[]
+        # Add the selected live article as an evidence source
+    if req.article_context:
+        article = req.article_context
+
+        article_source_id = (
+            "NEWS-" + str(abs(hash(article.url or article.title)))[:10]
+        )
+
+        sources.append({
+            "title": article.title,
+            "company": article.company or "AI Industry",
+            "published_date": article.date or "Unknown",
+            "url": article.url,
+            "source_id": article_source_id,
+            "source_type": (
+                f"Live news source · {article.publisher or 'External publisher'}"
+            ),
+        })
+
+        findings.append({
+            "company": article.company or "AI Industry",
+            "finding": (
+                f"Selected live intelligence article: "
+                f"'{article.title}' published by "
+                f"{article.publisher or 'external publisher'} "
+                f"on {article.date or 'an unknown date'}."
+            ),
+            "source_ids": [article_source_id],
+            "source_urls": [article.url] if article.url else [],
+        })
     for c in req.companies:
         if c==NEXORA:
             feats=evidence[c]["features"]; unique=[f for f in feats if f.get("Similarity Status","").lower()=="different"]

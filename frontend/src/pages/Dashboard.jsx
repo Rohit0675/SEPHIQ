@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { getOverview, getSignals } from "../api";
 import StatCard from "../components/StatCard";
+import AIAgentNews from "../components/AIAgentNews";
 
 export default function Dashboard({ go }) {
   const [overview, setOverview] = useState(null);
@@ -63,6 +64,7 @@ export default function Dashboard({ go }) {
           </div>
         </div>
       </section>
+      <AIAgentNews />
       <div className="stats-grid">
         <StatCard
           label="External signals"
@@ -89,6 +91,7 @@ export default function Dashboard({ go }) {
           icon={BrainCircuit}
         />
       </div>
+
       <section className="section-head">
         <div>
           <span className="kicker">LATEST INTELLIGENCE</span>

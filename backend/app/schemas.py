@@ -1,7 +1,32 @@
 from typing import Literal, Optional
 from pydantic import BaseModel, Field
 
-AnalysisType = Literal["comparison", "recent_updates", "feature_analysis", "trend_analysis", "executive_summary"]
+
+AnalysisType = Literal[
+    "comparison",
+    "recent_updates",
+    "feature_analysis",
+    "trend_analysis",
+    "executive_summary",
+]
+
+
+class ArticleContext(BaseModel):
+    """
+    Context supplied by SEPHIQ's live intelligence feed when
+    the user chooses to analyse a specific news article.
+    """
+
+    title: str = Field(min_length=1)
+    summary: str = ""
+    publisher: str = ""
+    company: str = ""
+    date: str = ""
+    url: str = ""
+    category: str = ""
+    relevance: str = ""
+    relevance_score: Optional[int] = None
+
 
 class AnalyzeRequest(BaseModel):
     question: str = Field(min_length=1)
@@ -11,11 +36,17 @@ class AnalyzeRequest(BaseModel):
     category: Optional[str] = None
     analysis_type: AnalysisType = "comparison"
 
+    # Optional context when analysis was initiated
+    # from the live AI Agent Watch feed.
+    article_context: Optional[ArticleContext] = None
+
+
 class Finding(BaseModel):
     company: str
     finding: str
     source_ids: list[str] = []
     source_urls: list[str] = []
+
 
 class Source(BaseModel):
     title: str
@@ -24,6 +55,7 @@ class Source(BaseModel):
     url: str
     source_id: str
     source_type: str
+
 
 class AnalyzeResponse(BaseModel):
     answer: str
